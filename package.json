@@ -1,0 +1,26 @@
+{
+  "name": "frontend-project-lvl2",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/vladbeer/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/vladbeer/frontend-project-lvl2/actions)",
+  "main": "index.js",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladbeer/frontend-project-lvl2.git"
+  },
+  "author": "vladbeer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladbeer/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/vladbeer/frontend-project-lvl2#readme",
+  "dependencies": {
+    "commander": "^7.2.0"
+  }
+}
