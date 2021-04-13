@@ -22,5 +22,11 @@
   "homepage": "https://github.com/vladbeer/frontend-project-lvl2#readme",
   "dependencies": {
     "commander": "^7.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.5"
   }
 }
