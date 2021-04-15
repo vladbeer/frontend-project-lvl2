@@ -1,1 +1,3 @@
-import genDiff from 'src/engenie.js';
+import genDiff from './src/engenie.js';
+
+export default genDiff;
