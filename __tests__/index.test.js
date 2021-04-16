@@ -12,3 +12,8 @@ test('json', () => {
   expect(genDiff(getFixturePath('before.json'), getFixturePath('after.json')))
     .toEqual(fileReade(getFixturePath('testjson')));
 });
+
+test('yaml', () => {
+  expect(genDiff(getFixturePath('before.yaml'), getFixturePath('after.yaml')))
+    .toEqual(fileReade(getFixturePath('testyaml')));
+});

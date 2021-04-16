@@ -1,12 +1,13 @@
 import fs from 'fs';
 import _ from 'lodash';
 import path from 'path';
+import parse from './parsers.js';
 
 export default (path1, path2, formType = 'stylish') => {
   const filePath1 = path.resolve('__fixtures__', path1);
-  const fileObj1 = JSON.parse(fs.readFileSync(filePath1, 'utf-8'));
+  const fileObj1 = parse(fs.readFileSync(filePath1, 'utf-8'), path1);
   const filePath2 = path.resolve('__fixtures__', path2);
-  const fileObj2 = JSON.parse(fs.readFileSync(filePath2, 'utf-8'));
+  const fileObj2 = parse(fs.readFileSync(filePath2, 'utf-8'), path2);
   const keys = _.sortBy(_.union(Object.keys(fileObj1), Object.keys(fileObj2)));
   let result = '{\n';
 
