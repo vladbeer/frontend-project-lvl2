@@ -8,13 +8,10 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const fileReade = (file) => fs.readFileSync(file, 'utf-8');
 
-test('json', () => {
+test('stylish', () => {
   expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json')))
     .toEqual(fileReade(getFixturePath('stylish-format')));
-});
-
-test('yaml', () => {
-  expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml')))
+    expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml')))
     .toEqual(fileReade(getFixturePath('stylish-format')));
 });
 
@@ -23,4 +20,11 @@ test('plain', () => {
     .toEqual(fileReade(getFixturePath('plain-format')));
   expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml'), 'plain'))
     .toEqual(fileReade(getFixturePath('plain-format')));
+});
+
+test('json', () => {
+  expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'json'))
+    .toEqual(fileReade(getFixturePath('json-format')));
+  expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml'), 'json'))
+    .toEqual(fileReade(getFixturePath('json-format')));
 });
