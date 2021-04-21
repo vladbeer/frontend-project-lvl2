@@ -17,3 +17,10 @@ test('yaml', () => {
   expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml')))
     .toEqual(fileReade(getFixturePath('stylish-format')));
 });
+
+test('plain', () => {
+  expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'plain'))
+    .toEqual(fileReade(getFixturePath('plain-format')));
+  expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml'), 'plain'))
+    .toEqual(fileReade(getFixturePath('plain-format')));
+});
