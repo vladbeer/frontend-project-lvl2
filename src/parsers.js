@@ -1,13 +1,18 @@
 import yaml from 'js-yaml';
 import path from 'path';
 
-export default (filePath, file) => {
+const parse = (filePath, file) => {
   const parseFile = path.extname(file).slice(1);
-
-  if (parseFile === 'yaml' || parseFile === 'yml') {
-    return yaml.load(filePath);
-  }
-  if (parseFile === 'json') {
-    return JSON.parse(filePath);
+  switch (parseFile) {
+    case 'yaml':
+      return yaml.load(filePath);
+    case 'yml':
+      return yaml.load(filePath);
+    case 'json':
+      return JSON.parse(filePath);
+    default:
+      throw new Error(`Error! Type ${parseFile} is unknown.`);
   }
 };
+
+export default parse;

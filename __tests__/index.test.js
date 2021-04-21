@@ -11,7 +11,7 @@ const fileReade = (file) => fs.readFileSync(file, 'utf-8');
 test('stylish', () => {
   expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json')))
     .toEqual(fileReade(getFixturePath('stylish-format')));
-    expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml')))
+  expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml')))
     .toEqual(fileReade(getFixturePath('stylish-format')));
 });
 

@@ -33,13 +33,12 @@ const buildTree = (data1, data2) => {
         newvalue: data2[key],
       };
     }
-    if (data1[key] === data2[key]) {
-      return {
-        type: 'unchanged',
-        key,
-        value: data1[key],
-      };
-    }
+
+    return {
+      type: 'unchanged',
+      key,
+      value: data1[key],
+    };
   });
   return result;
 };
