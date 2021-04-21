@@ -9,11 +9,11 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 const fileReade = (file) => fs.readFileSync(file, 'utf-8');
 
 test('json', () => {
-  expect(genDiff(getFixturePath('before.json'), getFixturePath('after.json')))
-    .toEqual(fileReade(getFixturePath('testjson')));
+  expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json')))
+    .toEqual(fileReade(getFixturePath('stylish-format')));
 });
 
 test('yaml', () => {
-  expect(genDiff(getFixturePath('before.yaml'), getFixturePath('after.yaml')))
-    .toEqual(fileReade(getFixturePath('testyaml')));
+  expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yaml')))
+    .toEqual(fileReade(getFixturePath('stylish-format')));
 });
