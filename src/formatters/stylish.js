@@ -4,7 +4,7 @@ const padding = (depth) => ' '.repeat(depth);
 
 const stringlify = (value, depth) => {
   if (!_.isObject(value)) {
-    return value.toString();
+    return value;
   }
   const lines = Object.keys(value).map((elem) => `${padding(depth + 8)}${elem}: ${stringlify(value[elem], depth + 4)}`);
   return ['{', ...lines, `${padding(depth + 4)}}`].join('\n');
